@@ -1,0 +1,268 @@
+/* 
+	Padrões:
+		Variáveis kebab-case (isso-e-uma-variavel)
+		Instruções devem aparecer no CSS, de acordo com a ordem em que aparecem no HTML (o máximo possível)
+		Identação padrão: 1 tab referente a 4 espaços
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&family=Inter:wght@900&family=Roboto&display=swap');
+
+@font-face {
+  font-family: Videotype;
+  src: url('fonts/videotype.ttf');
+}
+
+* {
+	font-family: Videotype;	
+}
+
+body {
+	height: 100vh;
+	background-image: url('img/Wallpaper.gif');
+    background-color: #010;
+    background-blend-mode: multiply;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/*cara, pq o interrogação ta fora do rodape,ksskskskskks
+	sei nao*/
+	/* eu coloquei display flex aqui e deu certo centralizar 
+	
+	queria ver se dava certo*/
+}
+
+#pagina {
+	position: relative;
+/*   	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	-ms-transform: translate(-50%, -50%);
+  	transform: translate(-50%, -50%); */
+}
+
+.titulo {
+    text-align: center;
+    font-family: 'Gideon Roman';
+    font-weight: 1000;
+    color: white;
+    text-shadow:
+        -1px -1px 2.5px #000,  
+        1px -1px 2.5px #000,
+        -1px 1px 2.5px #000,
+        1px 1px 2.5px #000;
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	margin-bottom: 1rem;
+	padding: 5px;
+}
+
+#span-setas {
+	display: flex;
+	align-items: flex-end;
+	gap: 15px;
+}
+
+.setas {
+	width: 40px;
+}
+
+#span-setas button {
+	border-radius: 10px;
+	background: none;
+	border: none;
+}
+
+#span-setas svg {
+	height: 50px;
+	color: green;
+}
+
+#span-setas button:hover svg {
+	color: black;
+}
+
+#perfil {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	color: #d9d9d9;
+	font-size: 20px;
+}
+
+#div-textareas {
+	display: flex;
+	gap: 10px;
+	padding: 5px;
+}
+
+.textareas {
+	transition: transform 200ms;
+	border-radius: 20px;
+    width: 560px;
+    height: 540px;
+    resize: none;
+    border: none;
+    padding-top: 3rem;
+	padding-left: 2.5rem;
+    outline: none;
+    font-size: 30px;
+    text-align: justify;
+}
+
+.textareas:focus { 
+     transform: scale(0.98, 0.98);
+}
+
+#texto-cripto {
+	background-color: #d9d9d9;
+}
+
+#texto-resul{
+    background-color: #007b12;
+}
+
+#texto-resul::placeholder {
+	color: #d9d9d9;
+}
+
+#chave {
+    width: 100px;
+	transition: all 1s;
+}
+/* Deixa trocado  */
+.animacao-chave-direita {
+	animation: chaveEsquerda 0.5s;
+}
+
+.animacao-chave-esquerda {
+	animation: chaveDireita 0.5s;
+}
+
+@keyframes chaveDireita {
+	0% {
+		transform: translateX(0);
+		opacity: 0.75;
+	}
+
+	5% {
+		opacity: 0.50;
+	}
+
+	25% {
+		transform: translateX(50px);
+		opacity: 0;
+	}
+
+	50% {
+		transform: translateX(-50px);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateX(0px);
+		opacity: 1;
+	}
+}
+
+@keyframes chaveEsquerda {
+	0% {
+		transform: translateX(0);
+		opacity: 0.75;
+	}
+
+	5% {
+		opacity: 0.5;
+	}
+
+	25% {
+		transform: translateX(-50px);
+		opacity: 0;
+	}
+
+	50% {
+		transform: translateX(50px);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateX(0px);
+		opacity: 1;
+	}
+}
+
+#cadeado{
+    width: 100px;
+    margin: 120px 0 120px 0;
+}
+
+#div-buttons {
+    display: flex;
+	gap: 1rem;
+	margin-top: 2rem;
+}
+
+.buttons {
+    max-width: 100%;
+    border: none;
+    border-radius: 20px;
+    padding: 1rem 2rem;
+	font-size: 25px;
+    font-weight: bolder;
+	transition: transform 100ms;
+}
+
+.buttons:hover {
+	transform: translateY(-5px);
+}
+
+.buttons:active, .setas:active {
+    transform: translateY(2.5px);
+}
+
+#limpar {
+    background-color: #d9d9d9;
+	color: #007b12;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#enviar {
+    background-color: #007b12;
+	color: #d9d9d9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#div-interrogacao{
+	display: flex;
+	float: right;
+	padding: 10px;
+}
+
+#interrogacao{
+	width: 30px;
+	opacity: 0.5;
+}
+
+#div-ajuda {
+	display: none;
+	background-color: rgba(255, 255, 255, 0.5);
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+}
