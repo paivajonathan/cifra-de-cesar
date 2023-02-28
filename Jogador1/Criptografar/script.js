@@ -19,8 +19,10 @@ let lado = 0;
 
 let animacaoPodeIniciar = true;
 
-let interrogacao = document.getElementById('interrogacao');
+let interrogacao = document.getElementById('div-interrogacao');
 let divAjuda = document.getElementById('div-ajuda');
+let divAjudaPodeDesaparecer = false;
+let ajuda = document.getElementById('ajuda');
 
 // Isso aqui vou tirar
 function cripto() {
@@ -107,8 +109,19 @@ function setasVerdes(lado) {
   }
 }
 
-// -----------------------------------
-
 interrogacao.addEventListener('click', () => {
-	divAjuda.style.display = "block";
+	divAjuda.style.zIndex = "10";
+	divAjuda.style.opacity = "1";
+});
+
+divAjuda.addEventListener('click', () => {
+	divAjuda.style.opacity = "0";
+	divAjudaPodeDesaparecer = true;
+});
+
+divAjuda.addEventListener('transitionend', () => {
+	if (divAjudaPodeDesaparecer) {
+		divAjuda.style.zIndex = "-10";
+		divAjudaPodeDesaparecer = false;
+	}
 });

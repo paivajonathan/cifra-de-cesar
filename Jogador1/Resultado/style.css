@@ -1,0 +1,24 @@
+@font-face {
+  font-family: Videotype;
+  src: url('fonts/videotype.ttf');
+}
+
+* {
+	font-family: Videotype;
+}
+
+body {
+	height: 100vh;
+	background-image: url('img/Wallpaper.gif');
+	background-color: #020;
+    background-blend-mode: multiply;
+	overflow: hidden;
+}
+
+#div-resultado {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}

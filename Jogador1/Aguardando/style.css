@@ -12,6 +12,7 @@ body {
 	background-image: url('img/Wallpaper.gif');
     background-color: #010;
     background-blend-mode: multiply;
+	overflow: hidden;
 }
 
 #main {
@@ -24,7 +25,7 @@ body {
 }
 
 #relogio {
-	animation: rodar 1s;
+	animation: rodar 1500ms;
 	animation-iteration-count: infinite;
 }
 
@@ -45,3 +46,4 @@ body {
 #aguardando {
 	font-size: 50px;
 }
+

@@ -1,0 +1,146 @@
+@font-face {
+  font-family: Videotype;
+  src: url('fonts/videotype.ttf');
+}
+
+* {
+	font-family: Videotype;
+}
+
+html, body {
+	min-height: 100vh;
+}
+
+body {
+	background-image: url('img/Wallpaper.gif');
+    background-color: #010;
+    background-blend-mode: multiply;
+}
+
+#main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: #d9d9d9;
+}
+
+#header {
+	width: 95%;
+	
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+	margin-top: 1.5rem;
+}
+
+#div-temporizador {
+	font-size: 75px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+
+#ampulheta {
+	width: 70px;
+	animation: rodar 1500ms;
+	animation-iteration-count: infinite;
+}
+
+@keyframes rodar {
+	0% {
+		transform: rotate(0deg);
+	} 
+
+	50% {
+		transform: rotate(180deg);		
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+#div-perfil {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	font-size: 40px;
+}
+
+#perfil {
+	width: 90px;
+}
+
+#vazio {
+	height: 100%;
+	animation: aguardando 3s;
+	animation-iteration-count: infinite;
+}
+
+#container-tentativas {
+	width: 100%;
+	margin: 1.5rem 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#vazio{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	height: fit-content;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 80px;
+	color: #007b12;
+}
+
+#pontinhos::after{
+	content: " ";
+	animation: aguardando 2s;
+	animation-iteration-count: infinite;
+}
+
+#container-tentativas .div-tentativa:nth-child(even) {
+	background-color: #007b12;
+	color: #d9d9d9;
+} 
+
+#container-tentativas .div-tentativa:nth-child(odd) {
+	background-color: #d9d9d9;
+	color: #007b12;
+}
+
+.div-tentativa {
+	max-width: 100%;
+	min-width: 75%;
+	margin: 0.5rem 0;
+	border: none;
+	border-radius: 20px;
+	padding: 1rem;
+	height: 100px;
+	font-size: 30px;
+	text-align: center;
+	word-wrap: break-word;
+}
+
+@keyframes aguardando{
+	25%{
+		content: ".";
+	}
+	50%{
+		content: "..";
+	}
+	75%{
+		content: "...";
+	}
+	100%{
+		content: " ";
+	}
+}

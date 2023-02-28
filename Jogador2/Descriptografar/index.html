@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Descriptografar - Jogador 2</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<form method="POST">
+		<div id="pagina">
+			<div id="header">
+				<span id="div-temporizador"> <img src="img/Relogio.png" alt="Relógio" id="relogio"> 60 </span>
+				<span id="perfil">
+					<span>JOGADOR 2</span>
+					<img src="img/PerfilJogador2.png">
+				</span>
+			</div>
+			<div class="center" id="div-textareas">
+				<textarea class="textareas" id="texto-resul" cols="55" rows="5" readonly
+					placeholder="Mensagem criptografada"></textarea>
+
+				<div id="div-setas">
+					<button type="button" onclick="diminuirLetra()">
+						<img src="img/SetaEV.png" alt="SetaEsquerda" class="setas"
+							onmouseenter="setasPretas('esquerda')" id="seta-esquerda"
+							onmouseleave="setasVerdes('esquerda')" onclick="mudarTexto()">
+					</button>
+
+					<img src="img/chaves/ChaveA.png" alt="A" id="chave">
+
+					<button type="button" onclick="aumentarLetra()">
+						<img src="img/SetaDV.png" alt="SetaDireita" class="setas" onmouseenter="setasPretas('direita')"
+							id="seta-direita" onmouseleave="setasVerdes('direita')">
+					</button>
+				</div>
+
+				<textarea class="textareas" id="texto-palpite" cols="55" rows="5"
+					placeholder="Aqui aparecerá a mensagem a ser modificada" maxlength="100" readonly></textarea>
+			</div>
+
+			<div id="rodape">
+				<div id="div-interrogacao-escondida">
+					<img src="img/InterrogacaoLaranja.png" alt="interrogacao" id="interrogacao" />
+				</div>
+				<div id="div-botoes">
+<!-- 					<button type="reset" class="botoes" id="limpar">LIMPAR</button> -->
+					<button type="submit" class="botoes" id="enviar">ENVIAR</button>
+				</div>
+				<div id="div-interrogacao">
+					<img src="img/InterrogacaoLaranja.png" alt="interrogacao" id="interrogacao" />
+				</div>
+			</div>
+
+		</div>
+		<div id="div-ajuda">
+			<img src="img/Ajuda.png" alt="Ajuda" id="ajuda">
+		</div>
+	</form>
+	<script src="script.js"></script>
+</body>
+
+</html>

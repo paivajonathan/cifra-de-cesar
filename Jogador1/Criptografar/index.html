@@ -5,14 +5,12 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Cifra de César</title>
+	<title>Criptografar - Jogador 1</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
 	<form method="post">
-		<!-- 		<h1 class="titulo">CIFRA DE CÉSAR</h1> -->
-
 		<!-- botoes que mudam a letra pra frente e pra trás-->
 		<div id="pagina">
 			<div id="header">
@@ -25,7 +23,7 @@
 					</button>
 
 					<!--chave-->
-<!-- 					<img src="img/chaves/ChaveA.png" alt="A" id="chave"> -->
+					<!-- 					<img src="img/chaves/ChaveA.png" alt="A" id="chave"> -->
 					<img src="img/chaves/ChaveA.png" alt="A" id="chave">
 
 					<button type="button" onclick="aumentarLetra()">
@@ -33,36 +31,39 @@
 							id="seta-direita" onmouseleave="setasVerdes('direita')" onclick="mudarTexto()">
 					</button>
 				</span>
-				<span id="perfil">
+				<span id="div-perfil">
 					<!--  Cadeado branco é só um teste -->
 					<span>JOGADOR 1</span>
-					<img src="img/PerfilJogador1.png" style="width: 50px;">
+					<img src="img/PerfilJogador1.png">
 				</span>
 			</div>
 
-			<div class="center" id="div-textareas">
+			<div id="div-textareas">
 				<textarea name="criptografar" class="textareas" id="texto-cripto" cols="55" rows="5"
-					placeholder="Digite sua mensagem" onkeypress="cripto()"></textarea>
+					placeholder="Digite sua mensagem" onkeypress="cripto()" maxlength="100"></textarea>
 				<textarea class="textareas" id="texto-resul" cols="55" rows="5" readonly
 					placeholder="Resultado"></textarea>
 			</div>
-<!-- 			ata -->
+
 			<div id="rodape">
-				<div class="center" id="div-buttons">
+				<div id="div-interrogacao-escondida">
+					<img src="img/InterrogacaoVerde.png" alt="interrogacao" id="interrogacao" />
+				</div>
+				
+				<div id="div-buttons">
 					<button type="reset" value="Limpar" class="buttons" id="limpar">LIMPAR</button>
 					<button type="submit" value="Enviar" class="buttons" id="enviar">ENVIAR</button>
 				</div>
 
-<!-- 				tou adicionando o javascript aqui -->
 				<div id="div-interrogacao">
-					<img src="img/InterrogacaoVerde.png" alt="interrogacao" id="interrogacao"/>
+					<img src="img/InterrogacaoVerde.png" alt="interrogacao" id="interrogacao" />
 				</div>
 			</div>
-			<div id="div-ajuda">
-				
-			</div>
+		</div>
+		<div id="div-ajuda">
+			<img src="img/Ajuda.png" alt="Ajuda" id="ajuda">
+		</div>
 	</form>
-	</div>
 	<script type="text/javascript" src="script.js"></script>
 </body>
 
